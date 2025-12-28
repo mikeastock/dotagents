@@ -41,6 +41,7 @@ agents/
 │       └── question/
 ├── hooks/
 │   └── pi/
+│       ├── confirm-destructive/
 │       └── protected-paths/
 ├── build/                            # generated during install
 │   ├── claude/
@@ -117,6 +118,7 @@ Example: `skill-overrides/brainstorming-claude.md` is prepended to the brainstor
 
 | Hook | Agent | Description |
 |------|-------|-------------|
+| `confirm-destructive` | Pi | Prompts for confirmation before destructive session actions (macOS only) |
 | `protected-paths` | Pi | Blocks write and edit operations to protected paths (.env, .git/, node_modules/) |
 
 ## What are Skills?
