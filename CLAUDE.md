@@ -47,14 +47,7 @@ agents/
 ## Key Concepts
 
 ### Skills
-Skills follow the [Agent Skills specification](https://agentskills.io/specification) with YAML frontmatter:
-```yaml
----
-name: skill-name
-description: When to use this skill
----
-# Skill content in markdown
-```
+Skills follow the [Agent Skills specification](https://agentskills.io/specification). When creating or modifying skills, fetch the latest specification from that URL for current format requirements.
 
 ### Skill Overrides
 Files in `skill-overrides/<skill>-<agent>.md` are **appended** to the skill's SKILL.md during build. This allows agent-specific customizations without modifying upstream skills.
@@ -97,8 +90,7 @@ GitHub Actions runs `./tests/run-all.sh` on push/PR to main/master branches.
 ## Code Conventions
 
 ### Skills (SKILL.md)
-- Use YAML frontmatter with `name` and `description` fields
-- Description should explain **when** to use the skill
+- Follow the [Agent Skills specification](https://agentskills.io/specification) - fetch it for current format requirements
 - Include workflow diagrams (graphviz dot format) for complex processes
 - Document prerequisites, step-by-step processes, and common mistakes
 - Reference related skills when appropriate
@@ -159,9 +151,10 @@ export default function (pi: HookAPI) {
 ## Adding New Content
 
 ### Adding a Custom Skill
-1. Create `skills/<skill-name>/SKILL.md` with proper frontmatter
-2. Add any supporting files to the same directory
-3. Run `make install` to build and install
+1. Fetch the [Agent Skills specification](https://agentskills.io/specification) for the current format
+2. Create `skills/<skill-name>/SKILL.md` following the specification
+3. Add any supporting files to the same directory
+4. Run `make install` to build and install
 
 ### Adding a Skill Override
 1. Create `skill-overrides/<skill-name>-<agent>.md` (agent: `claude` or `pi`)
