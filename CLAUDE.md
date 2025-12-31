@@ -97,41 +97,13 @@ GitHub Actions runs `./tests/run-all.sh` on push/PR to main/master branches.
 
 ### Custom Tools (TypeScript - Pi only)
 Location: `tools/pi/<tool-name>/index.ts`
-```typescript
-import type { CustomAgentTool, CustomToolFactory } from "@mariozechner/pi-coding-agent";
-import { Type } from "@sinclair/typebox";
 
-const factory: CustomToolFactory = (pi) => {
-  const tool: CustomAgentTool<typeof ParamsSchema, DetailsType> = {
-    name: "tool-name",
-    label: "Display Name",
-    description: "When to use this tool",
-    parameters: ParamsSchema,
-    async execute(toolCallId, params) { /* ... */ },
-    renderCall(args, theme) { /* TUI rendering */ },
-    renderResult(result, options, theme) { /* TUI rendering */ },
-  };
-  return tool;
-};
-
-export default factory;
-```
+Fetch the latest documentation from [Pi Coding Agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) for current tool API and format requirements.
 
 ### Hooks (TypeScript - Pi only)
 Location: `hooks/pi/<hook-name>/index.ts`
-```typescript
-import type { HookAPI } from "@mariozechner/pi-coding-agent/hooks";
 
-export default function (pi: HookAPI) {
-  pi.on("tool_call", async (event, ctx) => {
-    // Return undefined to allow, or { block: true, reason: "..." } to block
-  });
-
-  pi.on("session", async (event, ctx) => {
-    // Return { cancel: true } to cancel session events
-  });
-}
-```
+Fetch the latest documentation from [Pi Coding Agent](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) for current hook API and format requirements.
 
 ### Test Scripts (Bash)
 - Source `test-helpers.sh` for shared utilities
@@ -161,13 +133,13 @@ export default function (pi: HookAPI) {
 2. Content will be appended to the skill during build
 
 ### Adding a Custom Tool (Pi only)
-1. Create `tools/pi/<tool-name>/index.ts`
-2. Export a factory function as default
+1. Fetch the [Pi Coding Agent documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) for the current tool API
+2. Create `tools/pi/<tool-name>/index.ts` following the documentation
 3. Run `make install-tools`
 
 ### Adding a Hook (Pi only)
-1. Create `hooks/pi/<hook-name>/index.ts`
-2. Export the hook function as default
+1. Fetch the [Pi Coding Agent documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent) for the current hook API
+2. Create `hooks/pi/<hook-name>/index.ts` following the documentation
 3. Run `make install-hooks`
 
 ### Adding a New Plugin
