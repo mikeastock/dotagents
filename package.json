@@ -1,0 +1,13 @@
+{
+  "name": "agents",
+  "private": true,
+  "description": "Reusable skills, tools, and hooks for AI coding agents",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@mariozechner/pi-coding-agent": "latest",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
