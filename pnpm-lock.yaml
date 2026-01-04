@@ -12,8 +12,8 @@ importers:
         specifier: ^0.32.1
         version: 0.32.1(ws@8.18.3)(zod@3.25.76)
       '@mariozechner/pi-tui':
-        specifier: ^0.32.1
-        version: 0.32.1
+        specifier: ^0.33.0
+        version: 0.33.0
       '@sinclair/typebox':
         specifier: ^0.34.45
         version: 0.34.45
@@ -217,8 +217,12 @@ packages:
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  '@mariozechner/pi-tui@0.32.1':
-    resolution: {integrity: sha512-SofZpq29TaubZoe92MUv8KXJ4UpiqnOb+vHfBbhkGe//StMlAdpVmoqU4ulOLEDUotQEHlRso6DKb1IKDGn3qw==}
+  '@mariozechner/pi-tui@0.32.3':
+    resolution: {integrity: sha512-aq7e6qXcwSHvaTUKj5Ut9BY+ZezQ2rL+V4Sd2R5SnBW6JMCt5GnR/8uYBC2PcdxBQzGL9TnzjrC4av5jR+ilow==}
+    engines: {node: '>=20.0.0'}
+
+  '@mariozechner/pi-tui@0.33.0':
+    resolution: {integrity: sha512-jh4JLJVODEJm1gUCXWnZErvly1CmXMPXv6dsVDwuYUI/t4+qZT5ohsX6/AI8Mr3c4YmJHiItQwqAlcR7ESpPhQ==}
     engines: {node: '>=20.0.0'}
 
   '@mistralai/mistralai@1.10.0':
@@ -835,7 +839,7 @@ snapshots:
   '@mariozechner/pi-agent-core@0.32.1(ws@8.18.3)(zod@3.25.76)':
     dependencies:
       '@mariozechner/pi-ai': 0.32.1(ws@8.18.3)(zod@3.25.76)
-      '@mariozechner/pi-tui': 0.32.1
+      '@mariozechner/pi-tui': 0.32.3
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - bufferutil
@@ -868,7 +872,7 @@ snapshots:
     dependencies:
       '@mariozechner/pi-agent-core': 0.32.1(ws@8.18.3)(zod@3.25.76)
       '@mariozechner/pi-ai': 0.32.1(ws@8.18.3)(zod@3.25.76)
-      '@mariozechner/pi-tui': 0.32.1
+      '@mariozechner/pi-tui': 0.32.3
       chalk: 5.6.2
       cli-highlight: 2.1.11
       diff: 8.0.2
@@ -885,7 +889,15 @@ snapshots:
       - ws
       - zod
 
-  '@mariozechner/pi-tui@0.32.1':
+  '@mariozechner/pi-tui@0.32.3':
+    dependencies:
+      '@types/mime-types': 2.1.4
+      chalk: 5.6.2
+      get-east-asian-width: 1.4.0
+      marked: 15.0.12
+      mime-types: 3.0.2
+
+  '@mariozechner/pi-tui@0.33.0':
     dependencies:
       '@types/mime-types': 2.1.4
       chalk: 5.6.2
