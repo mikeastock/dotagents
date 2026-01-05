@@ -71,3 +71,7 @@ If arguments are provided: `$ARGUMENTS`
 - `/semantic-commit feat` - Create a feature commit with auto-generated message
 - `/semantic-commit fix auth` - Create a fix commit with "auth" scope
 - `/semantic-commit feat api add user authentication endpoint` - Full specification
+
+## Reference
+
+For comprehensive documentation, see the `semantic-commit` skill.

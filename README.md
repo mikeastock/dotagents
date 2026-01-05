@@ -38,7 +38,8 @@ agents/
 │   ├── agent-stuff/                  # git submodule (github.com/mitsuhiko/agent-stuff)
 │   └── pi-interview-tool/            # git submodule (github.com/nicobailon/pi-interview-tool)
 ├── skills/                           # custom skills
-│   └── fetching-buildkite-failures/
+│   ├── fetching-buildkite-failures/
+│   └── semantic-commit/
 ├── skill-overrides/                  # agent-specific appends
 │   ├── brainstorming-claude.md
 │   └── brainstorming-pi.md
@@ -159,6 +160,7 @@ Example: `skill-overrides/brainstorming-pi.md` is appended to the brainstorming 
 | Skill | Description |
 |-------|-------------|
 | `fetching-buildkite-failures` | Fetches build results from Buildkite and helps diagnose CI failures |
+| `semantic-commit` | Create git commits following the Conventional Commits specification |
 
 ## Available Tools
 
