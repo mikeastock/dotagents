@@ -9,34 +9,6 @@
       "CODEX_VERSION": "latest"
     }
   },
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "anthropic.claude-code",
-        "openai.chatgpt"
-      ],
-      "settings": {
-        "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.codeActionsOnSave": {
-          "source.fixAll.eslint": "explicit"
-        },
-        "terminal.integrated.defaultProfile.linux": "fish",
-        "terminal.integrated.profiles.linux": {
-          "bash": {
-            "path": "bash",
-            "icon": "terminal-bash"
-          },
-          "fish": {
-            "path": "fish"
-          },
-          "zsh": {
-            "path": "zsh"
-          }
-        }
-      }
-    }
-  },
   "remoteUser": "node",
   "postCreateCommand": "uv run --no-sync /workspace/.devcontainer/post_install.py",
   "mounts": [
