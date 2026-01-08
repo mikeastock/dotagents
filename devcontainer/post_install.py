@@ -51,8 +51,6 @@ set -as terminal-features ",xterm-ghostty:RGB"
 set -ga terminal-overrides '*:Ss=\\E[%p1%d q:Se=\\E[ q'
 """
 
-SCRIPT_DIR = Path(__file__).parent
-
 
 def log(message: str) -> None:
     print(f"post-install: {message}", file=sys.stderr)
@@ -133,12 +131,10 @@ def ensure_codex_config() -> None:
         log(f"skipping codex config (already exists at {codex_config})")
         return
 
-    source = SCRIPT_DIR / "codex-config.toml"
-    if not source.exists():
-        log(f"codex config template not found at {source}")
-        return
-
-    shutil.copyfile(source, codex_config)
+    codex_config.write_text(
+        'approval_policy = "never"\nsandbox_mode = "danger-full-access"\n',
+        encoding="utf-8",
+    )
     log(f"wrote default codex config to {codex_config}")
 
 
