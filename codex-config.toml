@@ -16,5 +16,5 @@ web_search_request = true
 skills = true
 shell_snapshot = true
 
-[projects."/workspace"]
+[projects."/Users/mikeastock/code"]
 trust_level = "trusted"
