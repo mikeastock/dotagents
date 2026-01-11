@@ -136,6 +136,7 @@ For custom skills, you can also place per-skill overrides at `skills/<skill>/ove
 
 | Skill | Description |
 |-------|-------------|
+| `ask-questions-if-underspecified` | Clarify requirements before implementing (invoke explicitly) |
 | `brainstorming` | Explores user intent, requirements and design before implementation |
 | `executing-plans` | Execute implementation plans with review checkpoints |
 | `fetching-buildkite-failures` | Fetches build results from Buildkite and helps diagnose CI failures |
