@@ -178,7 +178,7 @@ For custom skills, you can also place per-skill overrides at `skills/<skill>/ove
 
 Skills are specialized instruction sets that guide AI agents through specific tasks and workflows. Each skill provides structured guidance for a particular type of work.
 
-Skills follow the [Agent Skills standard](https://agentskills.io/specification) with YAML frontmatter containing `name` and `description` fields.
+Skills follow the [Agent Skills standard](https://agentskills.io/specification.md) with YAML frontmatter containing `name` and `description` fields.
 
 ### Skill Locations
 
@@ -256,4 +256,4 @@ See Pi's [extensions documentation](https://github.com/badlogic/pi-mono/blob/mai
 - [Pi Coding Agent Documentation](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent)
 - [Pi Extensions Documentation](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md)
 - [Codex CLI Skills Documentation](https://developers.openai.com/codex/skills)
-- [Agent Skills Specification](https://agentskills.io/specification)
+- [Agent Skills Specification](https://agentskills.io/specification.md)
