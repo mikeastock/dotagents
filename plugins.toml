@@ -31,3 +31,8 @@ extensions = [ "*" ]                                    # Install all extensions
 ["steipete/agent-scripts"]
 url = "https://github.com/steipete/agent-scripts"
 skills = [ "create-cli", "nano-banana-pro" ]
+
+["mitsuhiko/agent-stuff"]
+url = "https://github.com/mitsuhiko/agent-stuff"
+extensions_path = "pi-extensions/*.ts"
+extensions = [ "commit" ]
