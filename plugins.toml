@@ -36,3 +36,8 @@ skills = [ "create-cli", "nano-banana-pro" ]
 url = "https://github.com/mitsuhiko/agent-stuff"
 extensions_path = "pi-extensions/*.ts"
 extensions = [ "commit" ]
+
+# Per-agent skill exclusions
+# Skills listed here will not be built/installed for that agent
+[skill_exclusions]
+pi = [ "semantic-commit" ]
