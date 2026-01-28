@@ -1,16 +1,17 @@
 ---
 name: brave-search
-description: Web search and content extraction via Brave Search API. Use for searching documentation, facts, or any web content. Lightweight, no browser required.
+description: Web search via Brave Search API and content extraction via Firecrawl. Use for searching documentation, facts, or extracting clean content from any URL.
 ---
 
-# Brave Search
+# Brave Search + Firecrawl
 
-Headless web search and content extraction using Brave Search API. No browser or setup required.
+Web search using Brave Search API and content extraction using Firecrawl API. No browser required.
 
 ## Requirements
 
 - [uv](https://docs.astral.sh/uv/) (dependencies managed automatically via inline metadata)
-- `BRAVE_API_KEY` environment variable
+- `BRAVE_API_KEY` environment variable (for search)
+- `FIRECRAWL_API_KEY` environment variable (for content extraction)
 
 ## Search
 
@@ -21,16 +22,24 @@ Headless web search and content extraction using Brave Search API. No browser or
 {baseDir}/search.py "query" -n 3 --content     # Combined
 ```
 
-## Extract Page Content
+## Extract Page Content (Firecrawl)
 
 ```bash
-{baseDir}/content.py https://example.com/article
+{baseDir}/content.py https://example.com/article              # Markdown output
+{baseDir}/content.py https://example.com/article --links      # Include extracted links
+{baseDir}/content.py https://example.com/article --html       # Include raw HTML
+{baseDir}/content.py https://example.com/article --screenshot # Get screenshot URL
 ```
 
-Fetches a URL and extracts readable content as markdown.
+Firecrawl handles:
+- JavaScript-rendered pages
+- Anti-bot bypassing
+- Clean markdown conversion
+- Metadata extraction (title, description, language)
 
 ## Output Format
 
+### Search
 ```
 --- Result 1 ---
 Title: Page Title
@@ -43,9 +52,21 @@ Content: (if --content flag used)
 ...
 ```
 
+### Content Extraction
+```
+# Page Title
+
+> Page description
+
+Source: https://example.com/article
+Language: en
+
+[Clean markdown content...]
+```
+
 ## When to Use
 
-- Searching for documentation or API references
-- Looking up facts or current information
-- Fetching content from specific URLs
-- Any task requiring web search without interactive browsing
+- **Search**: Finding documentation, API references, facts, current information
+- **Content extraction**: Getting clean, readable content from any URL
+- JavaScript-heavy sites that need rendering
+- Sites with anti-bot protection
